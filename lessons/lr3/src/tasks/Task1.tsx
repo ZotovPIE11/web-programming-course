@@ -20,13 +20,13 @@ const products: Product[] = [
     id: 1,
     name: 'Наушники',
     price: 5990,
-    image: 'https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=400&h=300&fit=crop'
+    image: 'https://avatars.mds.yandex.net/i?id=fd626db1d42f6be66b5615c8d3c6463c_l-5150987-images-thumbs&n=13'
   },
   {
     id: 2,
     name: 'Смарт-часы',
     price: 12990,
-    image: 'https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=400&h=300&fit=crop'
+    image: 'https://avatars.mds.yandex.net/i?id=b37405b392a9098b2eccd10ab85fcaa9_l-5335506-images-thumbs&n=13'
   }
 ];
 
@@ -43,13 +43,13 @@ function Task1() {
         {products.map(product => (
           <div key={product.id}>
             {/* TODO: bg-white shadow-md rounded-lg p-4 hover:shadow-xl transition-shadow */}
-            <div>
+            <div className="bg-white shadow-md rounded-lg p-4 hover:shadow-xl transition-shadow">
               {/* TODO: rounded w-full h-40 object-cover */}
-              <img src={product.image} alt={product.name} />
+              <img src={product.image} alt={product.name} className="rounded w-360 h-240 object-cover"/>
               {/* TODO: text-lg font-bold mt-3 */}
-              <h3>{product.name}</h3>
+              <h3 className="text-lg font-bold mt-3"> {product.name}</h3>
               {/* TODO: text-xl font-bold text-blue-600 mt-2 */}
-              <p>{product.price.toLocaleString('ru-RU')} ₽</p>
+              <p className="text-xl font-bold text-blue-600 mt-2"> {product.price.toLocaleString('ru-RU')} ₽</p>
             </div>
           </div>
         ))}
