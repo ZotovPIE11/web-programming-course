@@ -9,20 +9,191 @@
 </head>
 <body>
     <!-- Header & Navigation -->
+    <header class="header">
+        <nav class="nav">
+            <div class="nav-brand">
+                <h1>Анна Светлова</h1>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="#home" class="nav-link">Главная</a></li>
+                <li><a href="#about" class="nav-link">Обо мне</a></li>
+                <li><a href="#gallery" class="nav-link">Галерея</a></li>
+                <li><a href="#contact" class="nav-link">Контакты</a></li>
+            </ul>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </nav>
+    </header>
 
     <main>
         <!-- Hero Section -->
+        <section id="home" class="hero">
+            <div class="hero-content">
+                <h1 class="hero-title">Анна Светлова</h1>
+                <p class="hero-subtitle">Профессиональный фотограф</p>
+                <p class="hero-description">Специализируюсь на портретной и свадебной съемке. Запечатлеваю ваши самые важные моменты с душой и профессионализмом.</p>
+                <div class="hero-buttons">
+                    <a href="#gallery" class="btn btn-primary">Посмотреть работы</a>
+                    <a href="#contact" class="btn btn-secondary">Связаться со мной</a>
+                </div>
+            </div>
+        </section>
 
         <!-- About Section -->
+        <section id="about" class="about">
+            <div class="container">
+                <h2 class="section-title">Обо мне</h2>
+                <div class="about-content">
+                    <div class="about-text">
+                        <p>Привет! Меня зовут Анна, и я профессиональный фотограф с более чем 5-летним опытом работы. Моя страсть — запечатлевать искренние эмоции и создавать фотографии, которые будут радовать вас долгие годы.</p>
+                        <p>Я специализируюсь на портретной и свадебной фотографии, но также с удовольствием работаю с семейными съемками и корпоративными мероприятиями. Каждый проект для меня — это возможность создать что-то особенное и уникальное.</p>
+                        <div class="about-stats">
+                            <div class="stat">
+                                <h3>200+</h3>
+                                <p>Довольных клиентов</p>
+                            </div>
+                            <div class="stat">
+                                <h3>5+</h3>
+                                <p>Лет опыта</p>
+                            </div>
+                            <div class="stat">
+                                <h3>500+</h3>
+                                <p>Успешных съемок</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="about-image">
+                        <img src="images/about.jpeg" alt="Анна Светлова" class="about-photo">
+                    </div>
+                </div>
+            </div>
+        </section>
 
         <!-- Gallery Section -->
+        <section id="gallery" class="gallery">
+            <div class="container">
+                <h2 class="section-title">Мои работы</h2>
+                <div class="gallery-filters">
+                    <button class="filter-btn active" data-filter="all">Все</button>
+                    <button class="filter-btn" data-filter="portrait">Портреты</button>
+                    <button class="filter-btn" data-filter="wedding">Свадьбы</button>
+                    <button class="filter-btn" data-filter="nature">Природа</button>
+                </div>
+                <div class="gallery-grid">
+                    <div class="gallery-item" data-category="portrait">
+                        <img src="images/portrait_1.jpg" alt="Портрет 1" class="gallery-image">
+                        <div class="gallery-overlay">
+                            <button class="gallery-zoom" data-src="images/portrait_1.jpg">
+                                <i class="zoom-icon">🔍</i>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="gallery-item" data-category="portrait">
+                        <img src="images/portrait_2.jpg" alt="Портрет 2" class="gallery-image">
+                        <div class="gallery-overlay">
+                            <button class="gallery-zoom" data-src="images/portrait_2.jpg">
+                                <i class="zoom-icon">🔍</i>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="gallery-item" data-category="wedding">
+                        <img src="images/wedding_1.jpg" alt="Свадьба 1" class="gallery-image">
+                        <div class="gallery-overlay">
+                            <button class="gallery-zoom" data-src="images/wedding_1.jpg">
+                                <i class="zoom-icon">🔍</i>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="gallery-item" data-category="wedding">
+                        <img src="images/wedding_2.jpg" alt="Свадьба 2" class="gallery-image">
+                        <div class="gallery-overlay">
+                            <button class="gallery-zoom" data-src="images/wedding_2.jpg">
+                                <i class="zoom-icon">🔍</i>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="gallery-item" data-category="nature">
+                        <img src="images/nature_1.jpg" alt="Природа 1" class="gallery-image">
+                        <div class="gallery-overlay">
+                            <button class="gallery-zoom" data-src="images/nature_1.jpg">
+                                <i class="zoom-icon">🔍</i>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="gallery-item" data-category="nature">
+                        <img src="images/nature_2.jpg" alt="Природа 2" class="gallery-image">
+                        <div class="gallery-overlay">
+                            <button class="gallery-zoom" data-src="images/nature_2.jpg">
+                                <i class="zoom-icon">🔍</i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
 
         <!-- Contact Section -->
+        <section id="contact" class="contact">
+            <div class="container">
+                <h2 class="section-title">Связаться со мной</h2>
+                <div class="contact-content">
+                    <div class="contact-info">
+                        <h3>Контактная информация</h3>
+                        <div class="contact-item">
+                            <i class="contact-icon">📞</i>
+                            <span>+7 (999) 123-45-67</span>
+                        </div>
+                        <div class="contact-item">
+                            <i class="contact-icon">✉️</i>
+                            <span>anna.svetlova@photo.ru</span>
+                        </div>
+                        <div class="contact-item">
+                            <i class="contact-icon">📍</i>
+                            <span>Москва, Россия</span>
+                        </div>
+                        <div class="social-links">
+                            <a href="#" class="social-link">Instagram</a>
+                            <a href="#" class="social-link">VK</a>
+                            <a href="#" class="social-link">Telegram</a>
+                        </div>
+                    </div>
+                    <form class="contact-form" id="contactForm">
+                        <div class="form-group">
+                            <input type="text" id="name" name="name" placeholder="Ваше имя" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="email" id="email" name="email" placeholder="Ваш email" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="tel" id="phone" name="phone" placeholder="Ваш телефон">
+                        </div>
+                        <div class="form-group">
+                            <textarea id="message" name="message" placeholder="Ваше сообщение" rows="5" required></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Отправить сообщение</button>
+                    </form>
+                </div>
+            </div>
+        </section>
     </main>
 
     <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2024 Анна Светлова. Все права защищены.</p>
+        </div>
+    </footer>
 
     <!-- Modal for enlarged images -->
+    <div class="modal" id="imageModal">
+        <div class="modal-content">
+            <span class="modal-close">&times;</span>
+            <img src="" alt="" class="modal-image">
+        </div>
+    </div>
 
     <script src="js/script.js"></script>
 </body>

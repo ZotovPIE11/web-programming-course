@@ -16,7 +16,7 @@
 // TODO: Создать union тип для категорий
 // electronics | clothing | books | food | other
 
-function createProduct(id, name, price, category, inStock, tags) {
+function createProduct(id: number, name: string, price: number, category: string, inStock: boolean, tags: string[]) {
     return {
         id,
         name,
@@ -29,7 +29,9 @@ function createProduct(id, name, price, category, inStock, tags) {
 }
 
 // TODO: Типизировать функцию фильтрации товаров
-function filterProducts(products, filters) {
+type Product = ReturnType<typeof createProduct>
+type ProductFilter = {category?: string, inStock?: boolean, minPrice?: number, maxPrice?: number, tag?: string}
+function filterProducts(products: Array<Product>, filters: ProductFilter) {
     return products.filter(product => {
         if (filters.category && product.category !== filters.category) {
             return false;
@@ -51,7 +53,7 @@ function filterProducts(products, filters) {
 }
 
 // TODO: Типизировать функцию расчета скидки
-function calculateDiscount(product, discountType, value) {
+function calculateDiscount(product: Product, discountType: 'percentage'|'fixed'|'buy_one_get_one', value: number) {
     let finalPrice = product.price;
     
     switch (discountType) {
@@ -77,7 +79,7 @@ function calculateDiscount(product, discountType, value) {
 }
 
 // TODO: Типизировать функцию сортировки
-function sortProducts(products, sortBy, order) {
+function sortProducts(products: Array<Product>, sortBy: 'name'|'price'|'createdAt', order: 'desc'|'asc') {
     return [...products].sort((a, b) => {
         let comparison = 0;
         
@@ -111,9 +113,10 @@ const electronicsProducts = filterProducts(products, {
     category: 'electronics', 
     inStock: true 
 });
+
 console.log('Электроника в наличии:', electronicsProducts);
 
-const discountedPhone = calculateDiscount(products[0], 'percentage', 10);
+const discountedPhone = calculateDiscount(products[0] as Product, 'percentage', 10);
 console.log('Скидка на телефон:', discountedPhone);
 
 const sortedByPrice = sortProducts(products, 'price', 'asc');

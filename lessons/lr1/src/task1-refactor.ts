@@ -9,7 +9,7 @@
  */
 
 // Калькулятор с проблемами типизации
-function calculate(operation, a, b) {
+function calculate(operation: 'add'|'subtract'|'multiply'|'divide' , a: number, b: number) {
     switch (operation) {
         case 'add':
             return a + b;
@@ -28,7 +28,7 @@ function calculate(operation, a, b) {
 }
 
 // Функция для работы с пользователем
-function createUser(name, age, email, isAdmin) {
+function createUser(name: string, age: number, email: string, isAdmin: boolean = false) {
     return {
         name,
         age,
@@ -42,8 +42,9 @@ function createUser(name, age, email, isAdmin) {
 }
 
 // Обработка списка пользователей
-function processUsers(users) {
-    return users.map(user => {
+type User = ReturnType<typeof createUser>
+function processUsers(users: Array<User>) {
+    return users.map(user=> {
         return {
             ...user,
             displayName: user.name.toUpperCase(),
@@ -53,7 +54,9 @@ function processUsers(users) {
 }
 
 // Функция поиска пользователя
-function findUser(users, criteria) {
+type users = ReturnType<typeof processUsers>
+
+function findUser(users: Array<User>, criteria: string|number|Partial<User>) {
     if (typeof criteria === 'string') {
         return users.find(user => user.name === criteria);
     }
@@ -62,7 +65,9 @@ function findUser(users, criteria) {
     }
     if (typeof criteria === 'object') {
         return users.find(user => {
-            return Object.keys(criteria).every(key => user[key] === criteria[key]);
+            return Object.keys(criteria).every(key => {
+                const kn = key as keyof User
+                return user[kn] === criteria[kn]});
         });
     }
     return null;
@@ -91,3 +96,4 @@ console.log(foundByAge);
 
 const foundByObject = findUser(users, { name: 'Мария', age: 16 });
 console.log(foundByObject);
+
