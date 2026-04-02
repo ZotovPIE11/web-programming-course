@@ -1,0 +1,19 @@
+// чертёж базы, создание таблицы
+generator client {
+  provider = "prisma-client-js" // стандартный клиент Prisma для Node.js + TS
+}
+// подключение к базе данных
+datasource db {
+  provider = "sqlite"         
+ 
+}
+// Таблица пользователей (модель User)
+model User {
+  id        String   @id @default(cuid())     
+  email     String   @unique
+  name      String?
+  githubId  String   @unique                 
+  createdAt DateTime @default(now())
+
+  @@map("users")   // название таблицы  
+}
